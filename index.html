@@ -10,8 +10,62 @@
 </head>
 <body>
 
+  <!-- Floating Background Elements -->
+  <div class="floating-elements">
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+  </div>
+
   <nav>
-    <h2>Krushna Nirmalkar</h2>
+    <a href="#" class="logo">
+      <div class="logo-container">
+        <svg class="logo-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#00d4ff">
+                <animate attributeName="stop-color" values="#00d4ff;#60a5fa;#a78bfa;#00d4ff" dur="4s" repeatCount="indefinite"/>
+              </stop>
+              <stop offset="100%" style="stop-color:#a78bfa">
+                <animate attributeName="stop-color" values="#a78bfa;#f472b6;#00d4ff;#a78bfa" dur="4s" repeatCount="indefinite"/>
+              </stop>
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <!-- Outer hexagon -->
+          <polygon class="hex-outer" points="30,2 54,16 54,44 30,58 6,44 6,16" fill="none" stroke="url(#logoGradient)" stroke-width="1.5" filter="url(#glow)"/>
+          <!-- Inner hexagon -->
+          <polygon class="hex-inner" points="30,10 46,20 46,40 30,50 14,40 14,20" fill="rgba(96,165,250,0.05)" stroke="url(#logoGradient)" stroke-width="1"/>
+          <!-- Letter K with style -->
+          <g class="logo-letter" filter="url(#glow)">
+            <path d="M24,22 L24,38 M24,30 L36,22 M24,30 L36,38" fill="none" stroke="url(#logoGradient)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <!-- Decorative dots -->
+          <circle class="dot dot-1" cx="30" cy="2" r="2" fill="url(#logoGradient)"/>
+          <circle class="dot dot-2" cx="54" cy="16" r="1.5" fill="url(#logoGradient)" opacity="0.7"/>
+          <circle class="dot dot-3" cx="54" cy="44" r="1.5" fill="url(#logoGradient)" opacity="0.7"/>
+          <circle class="dot dot-4" cx="30" cy="58" r="2" fill="url(#logoGradient)"/>
+          <circle class="dot dot-5" cx="6" cy="44" r="1.5" fill="url(#logoGradient)" opacity="0.7"/>
+          <circle class="dot dot-6" cx="6" cy="16" r="1.5" fill="url(#logoGradient)" opacity="0.7"/>
+        </svg>
+        <div class="logo-ring"></div>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">Krushna</span>
+        <span class="logo-surname">Nirmalkar</span>
+      </div>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -21,20 +75,69 @@
   </nav>
 
   <section class="hero">
-    <h1>Hi, I'm Krushna Nirmalkar 👋</h1>
-    <p>CSE Student | Developer | Building Practical Tech Solutions</p>
-    <a href="#projects" class="btn">View My Work</a>
+    <div class="hero-content">
+      <span class="hero-greeting">Hello, I'm</span>
+      <h1 class="glitch" data-text="Krushna Nirmalkar">Krushna Nirmalkar</h1>
+      <div class="typing-container">
+        <span class="typing-text"></span>
+        <span class="cursor">|</span>
+      </div>
+      <p class="hero-tagline">Building practical tech solutions with passion</p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-decoration">
+      <div class="code-block">
+        <span class="code-line"><span class="code-keyword">const</span> developer = {</span>
+        <span class="code-line">  <span class="code-property">name</span>: <span class="code-string">"Krushna"</span>,</span>
+        <span class="code-line">  <span class="code-property">focus</span>: <span class="code-string">"Data Science"</span>,</span>
+        <span class="code-line">  <span class="code-property">passion</span>: <span class="code-string">"∞"</span></span>
+        <span class="code-line">};</span>
+      </div>
+    </div>
   </section>
 
   <section id="about" data-aos="fade-up">
-    <h2>About Me</h2>
-    <p>
-      I'm a Computer Science Engineering student planning to pursue Data Science, with a strong interest in working with data to solve real-world problems. I enjoy building projects that involve data analysis, databases, and system design, and I actively participate in hackathons to apply these skills in practical scenarios. I'm currently strengthening my foundations in Python, SQL, and statistics while exploring how data-driven insights can improve decision-making systems.
-    </p>
+    <div class="section-header">
+      <h2>About Me</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-content">
+      <div class="about-text">
+        <p>
+          I'm a <span class="highlight">Computer Science Engineering student</span> planning to pursue <span class="highlight">Data Science</span>, with a strong interest in working with data to solve real-world problems.
+        </p>
+        <p>
+          I enjoy building projects that involve data analysis, databases, and system design, and I actively participate in hackathons to apply these skills in practical scenarios.
+        </p>
+        <p>
+          I'm currently strengthening my foundations in <span class="highlight">Python, SQL, and statistics</span> while exploring how data-driven insights can improve decision-making systems.
+        </p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-item">
+          <span class="stat-number">2+</span>
+          <span class="stat-label">Projects Built</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">5+</span>
+          <span class="stat-label">Technologies</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">∞</span>
+          <span class="stat-label">Curiosity</span>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="skills" data-aos="fade-up">
-    <h2>Skills</h2>
+    <div class="section-header">
+      <h2>Skills</h2>
+      <div class="section-line"></div>
+    </div>
     
     <div class="skills-container">
       <!-- Programming Languages -->
@@ -110,50 +213,194 @@
             <i class="fab fa-github"></i>
             <span>GitHub</span>
           </div>
+          <div class="skill-item">
+            <i class="fas fa-terminal"></i>
+            <span>VS Code</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <section id="projects" data-aos="fade-up">
-    <h2>Projects</h2>
-
-    <div class="project-card">
-      <h3>JanDarpan – Civic Digital Twin</h3>
-      <p>
-        A system to simulate citizen responses to public policies before
-        real-world implementation.
-      </p>
-      <span>Python • Data Modeling • Web Concepts</span>
+    <div class="section-header">
+      <h2>Projects</h2>
+      <div class="section-line"></div>
     </div>
 
-    <div class="project-card">
-      <h3>WhatsApp-based Cattle Health System</h3>
-      <p>
-        Doctors manage cattle health records through WhatsApp while office staff
-        use a PC-based system.
-      </p>
-      <span>Python • MySQL • System Design</span>
+    <div class="projects-grid">
+      <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="project-icon">
+          <i class="fas fa-city"></i>
+        </div>
+        <div class="project-content">
+          <h3>JanDarpan – Civic Digital Twin</h3>
+          <p>
+            A system to simulate citizen responses to public policies before
+            real-world implementation.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Data Modeling</span>
+            <span class="tag">Web Concepts</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link" title="View Project"><i class="fas fa-external-link-alt"></i></a>
+          <a href="#" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="project-icon">
+          <i class="fas fa-heartbeat"></i>
+        </div>
+        <div class="project-content">
+          <h3>WhatsApp-based Cattle Health System</h3>
+          <p>
+            Doctors manage cattle health records through WhatsApp while office staff
+            use a PC-based system.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">System Design</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link" title="View Project"><i class="fas fa-external-link-alt"></i></a>
+          <a href="#" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="contact" data-aos="fade-up">
-    <h2>Get In Touch</h2>
-    <p>I'm always open to discussing new projects, creative ideas, or opportunities.</p>
-    <p>Email: krushna.nirmalkar@example.com</p>
-    <p class="social-links">
-      <a href="https://github.com/" target="_blank">GitHub</a> |
-      <a href="https://linkedin.com/in/" target="_blank">LinkedIn</a>
-    </p>
+    <div class="section-header center">
+      <h2>Get In Touch</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-content">
+      <p class="contact-intro">I'm always open to discussing new projects, creative ideas, or opportunities.</p>
+      <div class="contact-methods">
+        <a href="mailto:krushnanirmalkar@gmail.com" class="contact-email">
+          <i class="fas fa-envelope"></i>
+          krushnanirmalkar@gmail.com
+        </a>
+        <a href="tel:+918830621330" class="contact-phone">
+          <i class="fas fa-phone"></i>
+          +91 8830621330
+        </a>
+      </div>
+      <div class="social-links">
+        <a href="https://github.com/" target="_blank" class="social-icon" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/" target="_blank" class="social-icon" title="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://twitter.com/" target="_blank" class="social-icon" title="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
+    </div>
   </section>
 
   <footer>
-    <p>© 2026 Krushna Nirmalkar. Built with ❤️</p>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <svg class="logo-svg small" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="logoGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#00d4ff"/>
+              <stop offset="100%" style="stop-color:#a78bfa"/>
+            </linearGradient>
+          </defs>
+          <polygon points="30,2 54,16 54,44 30,58 6,44 6,16" fill="none" stroke="url(#logoGradient3)" stroke-width="1.5"/>
+          <polygon points="30,10 46,20 46,40 30,50 14,40 14,20" fill="rgba(96,165,250,0.05)" stroke="url(#logoGradient3)" stroke-width="1"/>
+          <path d="M24,22 L24,38 M24,30 L36,22 M24,30 L36,38" fill="none" stroke="url(#logoGradient3)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Krushna Nirmalkar</span>
+      </div>
+      <p>Designed & Built with <span class="heart">❤</span></p>
+      <p class="copyright">© 2026 All Rights Reserved</p>
+    </div>
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init();
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true
+    });
+
+    // Typing effect
+    const texts = ['CSE Student', 'Developer', 'Data Enthusiast', 'Problem Solver'];
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typingElement = document.querySelector('.typing-text');
+
+    function type() {
+      const currentText = texts[textIndex];
+      
+      if (isDeleting) {
+        typingElement.textContent = currentText.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typingElement.textContent = currentText.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      let typeSpeed = isDeleting ? 50 : 100;
+
+      if (!isDeleting && charIndex === currentText.length) {
+        typeSpeed = 2000;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % texts.length;
+        typeSpeed = 500;
+      }
+
+      setTimeout(type, typeSpeed);
+    }
+
+    type();
+
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navList = document.querySelector('nav ul');
+
+    navToggle.addEventListener('click', () => {
+      navList.classList.toggle('active');
+      navToggle.classList.toggle('active');
+    });
+
+    // Smooth scroll with offset
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          navList.classList.remove('active');
+          navToggle.classList.remove('active');
+        }
+      });
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 100) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
   </script>
 </body>
 </html>
